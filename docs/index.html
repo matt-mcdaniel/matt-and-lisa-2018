@@ -4,11 +4,62 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Matt and Lisa 2018</title>
+	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		.background {
+			padding-top: 30px;
+			background-image: url('./geometry2.png');
+			background-attachment: fixed;
+			height: 100vh;
+			width: 100vw;
+			display: flex;
+			flex-flow: column wrap;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.title {
+			margin: 0;
+			padding: 0;
+			font-family: 'Cabin';
+			font-size: 30px;
+			margin-bottom: 50px;
+			color: #5c5c5c;
+			letter-spacing: 3px;
+		}
+
+		.postcard {
+			max-width: 700px;
+		}
+
+		@media (max-width: 700px) {
+			.postcard {
+				max-width: 400px;
+			}
+
+			.title {
+				letter-spacing: 0;
+				font-size: 30px;
+			}
+		}
+	</style>
 </head>
 
 <body>
+	<div class="background">
 
-	<h1>Matt and Lisa 2018</h1>
+
+		<h1 class="title">Matt and Lisa 2018</h1>
+		<img class="postcard" src="the_postcard.png" />
+	</div>
 
 </body>
 

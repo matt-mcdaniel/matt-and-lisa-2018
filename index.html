@@ -15,14 +15,12 @@
 		}
 
 		.background {
-			padding-top: 30px;
 			background-image: url('./geometry2.png');
 			background-attachment: fixed;
 			height: 100vh;
 			width: 100vw;
 			display: flex;
 			flex-flow: column wrap;
-			justify-content: center;
 			align-items: center;
 		}
 
@@ -31,24 +29,25 @@
 			padding: 0;
 			font-family: 'Cabin';
 			font-size: 30px;
-			margin-bottom: 50px;
-			color: #5c5c5c;
+			padding: 30px;
+			color: white;
 			letter-spacing: 3px;
+			width: 100%;
+			font-weight: 200;
+			text-align: center;
+			background-color: #f5bba1;
 		}
 
 		.postcard {
-			max-width: 700px;
+			width: 100vw;
+			/* max-width: 700px; */
 		}
 
 		@media (max-width: 700px) {
-			.postcard {
+			/* .postcard {
 				max-width: 400px;
-			}
-
-			.title {
-				letter-spacing: 0;
-				font-size: 30px;
-			}
+			} */
+			.title {}
 		}
 	</style>
 </head>
@@ -57,7 +56,7 @@
 	<div class="background">
 
 
-		<h1 class="title">Matt and Lisa 2018</h1>
+		<!-- <h1 class="title">Matt and Lisa 2018</h1> -->
 		<img class="postcard" src="the_postcard.png" />
 	</div>
 

@@ -1,0 +1,12 @@
+.survey-title {
+    font-family: 'Pacifico';
+}
+
+.button {
+    background-color: dodgerblue;
+    padding: 15px;
+    color: white;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+}

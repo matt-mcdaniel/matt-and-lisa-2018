@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Matt and Lisa 2018 | Invitees</title>
+
+	<link rel="stylesheet" href="global.css" />
+	<link rel="stylesheet" href="nav.css" />
+	<link rel="stylesheet" href="survey.css" />
+	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+</head>
+
+<body>
+
+	<!-- <nav class="nav">
+		<div class="nav-left">
+			<a href="index.html">Matt and Lisa</a>
+		</div>
+		<div class="nav-right">
+			<a href="about.html">About Hunt</a>
+			<a href="accommodations.html">Accommodations</a>
+			<a href="party.html">Wedding Party</a>
+			<a href="registry.html">Registry</a>
+		</div>
+	</nav> -->
+
+
+	<div class="max-width" id="invitees">
+
+	</div>
+
+
+</body>
+
+<script src=" https://www.gstatic.com/firebasejs/4.13.0/firebase.js "></script>
+<script>
+
+	var config = {
+		apiKey: "AIzaSyBk8M2JRssYDJ1c47wHQiLko2Et3TsHUlU",
+		authDomain: "matt-and-lisa-2018.firebaseapp.com",
+		databaseURL: "https://matt-and-lisa-2018.firebaseio.com/",
+		storageBucket: "bucket.appspot.com"
+	};
+	firebase.initializeApp(config);
+
+	// Get a reference to the database service
+	var invitees = firebase.database().ref('/invitees');
+
+	invitees.once('value', function (snapshot) {
+		const val = snapshot.val();
+		Object.keys(val).forEach(function (id) {
+			console.log(val[id]);
+
+			const container = document.getElementById('invitees');
+
+			const name = document.createElement('h3');
+			name.innerHTML = val[id].name;
+
+			container.appendChild(name);
+
+			const address = document.createElement('p');
+			address.innerHTML = val[id].address;
+
+			container.appendChild(address);
+
+			const number = document.createElement('p');
+			number.innerHTML = val[id].number;
+
+			container.appendChild(number);
+
+		})
+	})
+</script>
+
+</html>

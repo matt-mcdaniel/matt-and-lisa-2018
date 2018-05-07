@@ -6,3 +6,9 @@
     font-family: 'Cabin';
     color: '#f7f7f7';
 }
+
+.max-width {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}

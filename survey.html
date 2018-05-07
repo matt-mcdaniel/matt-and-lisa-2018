@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Matt and Lisa 2018 | Survey</title>
+
+	<link rel="stylesheet" href="global.css" />
+	<link rel="stylesheet" href="nav.css" />
+	<link rel="stylesheet" href="survey.css" />
+	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+</head>
+
+<body>
+
+	<nav class="nav">
+		<div class="nav-left">
+			<a href="index.html">Matt and Lisa</a>
+		</div>
+		<div class="nav-right">
+			<a href="about.html">About Hunt</a>
+			<a href="accommodations.html">Accommodations</a>
+			<a href="party.html">Wedding Party</a>
+			<a href="registry.html">Registry</a>
+		</div>
+	</nav>
+
+
+	<div class="max-width">
+		<h1>Wedding Invitation Mailing Info</h1>
+		<p>We need to know where to send the invitations.</p>
+
+
+		<form>
+			<label style="display: block;">Name</label>
+			<input style="display: block;" type="text" id="name" />
+			<label style="display: block;">Address</label>
+			<input style="display: block;" type="text" id="address" placeholder="123 Main Street, San Antonio, TX 78209"/>
+			<label style="display: block;">Phone Number</label>
+			<input style="display: block;" type="text" id="phone" />
+		</form>
+
+		<div class="button" id="submit">Submit</div>
+	</div>
+
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script>
+
+	var config = {
+		apiKey: "AIzaSyBk8M2JRssYDJ1c47wHQiLko2Et3TsHUlU",
+		authDomain: "matt-and-lisa-2018.firebaseapp.com",
+		databaseURL: "https://matt-and-lisa-2018.firebaseio.com/",
+		storageBucket: "bucket.appspot.com"
+	};
+	firebase.initializeApp(config);
+
+	// Get a reference to the database service
+	var invitees = firebase.database().ref('/invitees');
+
+	// Get inputs
+	const submit = document.getElementById('submit');
+
+	submit.addEventListener('click', function () {
+
+		let data = {};
+
+		['name', 'address', 'phone'].forEach(function (id) {
+			const el = document.getElementById(id);
+
+			data[id] = el.value;
+		})
+
+
+		const newInvitee = invitees.push();
+
+		newInvitee.set(data)
+	})
+</script>
+
+</html>

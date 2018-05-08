@@ -7,8 +7,36 @@
     color: '#f7f7f7';
 }
 
+.logo {
+    font-family: 'Pacifico';
+    color: #333333;
+    transition: all 200ms auto;
+}
+
+.logo:hover {
+    color: #666666;
+}
+/*
 .max-width {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 30px auto;
     position: relative;
 }
+
+input,
+label,
+select,
+button,
+textarea {
+    border: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height: 1;
+    font-size: 13px;
+}
+
+input:focus {
+    outline: 0;
+} */

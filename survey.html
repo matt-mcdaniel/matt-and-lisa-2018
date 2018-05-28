@@ -109,7 +109,7 @@
 				<small id="emailHelp" class="form-text text-muted">The address for the invitation to be sent to.</small>
 			</div>
 
-			<div class="btn btn-primary" id="submit">Submits</button>
+			<div class="btn btn-primary" id="submit">Submit</button>
 		</form>
 
 		<!-- <form>
@@ -160,6 +160,9 @@
 		})
 
 		try {
+			if (!data.name || !data['address-street'] || !data['address-city']) {
+				throw new Error('Please fill out the name and address fields');
+			}
 
 			var newInvitee = invitees.push();
 

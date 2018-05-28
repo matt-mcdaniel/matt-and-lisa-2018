@@ -141,15 +141,15 @@
 	var invitees = firebase.database().ref('/invitees');
 
 	// Get inputs
-	const submit = document.getElementById('submit');
+	var submit = document.getElementById('submit');
 
 	submit.addEventListener('click', function (e) {
 		e.preventDefault();
 
-		let data = { address: '' };
+		var data = { address: '' };
 
 		['name', 'address-street', 'address-city', 'phone'].forEach(function (id) {
-			const el = document.getElementById(id);
+			var el = document.getElementById(id);
 
 			if (id.match('address')) {
 				data['address'] += el.value + ' '
@@ -161,27 +161,27 @@
 
 		try {
 
-			const newInvitee = invitees.push();
+			var newInvitee = invitees.push();
 
 			newInvitee.set(data);
 
-			const form = document.getElementById('survey-form');
+			var form = document.getElementById('survey-form');
 			form.remove();
 
-			const container = document.getElementById('survey-container');
-			const thankYou = document.createElement('div');
+			var container = document.getElementById('survey-container');
+			var thankYou = document.createElement('div');
 			thankYou.classList += ' thank-you';
 			thankYou.innerText = 'Thank you!';
 			container.appendChild(thankYou);
 		} catch (e) {
-			const container = document.getElementById('survey-container');
-			const error = document.createElement('div');
+			var container = document.getElementById('survey-container');
+			var error = document.createElement('div');
 			error.classList += ' error';
 			error.innerText = 'Oops. Something went wrong.\n Let Matt or Lisa know.';
 
 			container.appendChild(error);
 
-			const errorDetail = document.createElement('div');
+			var errorDetail = document.createElement('div');
 			errorDetail.classList += 'error-detail';
 			errorDetail.innerText = e.message;
 			container.appendChild(errorDetail);

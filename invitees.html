@@ -66,39 +66,39 @@
 	// Get a reference to the database service
 	var invitees = firebase.database().ref('/invitees');
 
-	const submit = document.getElementById('submit');
+	var submit = document.getElementById('submit');
 
 	submit.addEventListener('click', function (e) {
 		e.preventDefault();
 
-		const pw = document.getElementById('password');;
+		var pw = document.getElementById('password');;
 
 		if (pw.value === 'june') {
 			invitees.once('value', function (snapshot) {
-				const val = snapshot.val();
+				var val = snapshot.val();
 				Object.keys(val).forEach(function (id) {
-					const container = document.getElementById('invitees');
+					var container = document.getElementById('invitees');
 
-					const item = document.createElement('div');
+					var item = document.createElement('div');
 					item.classList += ' item';
 
 					container.appendChild(item);
 
 
-					const name = document.createElement('h4');
+					var name = document.createElement('h4');
 					name.innerHTML = val[id].name;
 					name.classList += 'mb-0'
 
 					item.appendChild(name);
 
-					const address = document.createElement('p');
+					var address = document.createElement('p');
 					address.innerHTML = val[id].address;
 					address.classList += 'mb-0'
 
 
 					item.appendChild(address);
 
-					const phone = document.createElement('p');
+					var phone = document.createElement('p');
 					phone.innerHTML = val[id].phone;
 					phone.classList += 'mb-0'
 

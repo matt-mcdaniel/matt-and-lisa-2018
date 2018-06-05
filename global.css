@@ -16,6 +16,26 @@
 .logo:hover {
     color: #666666;
 }
+
+.nav-link {
+    text-align: right;
+    text-decoration: none;
+    color: #333333 !important;
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+.nav-link:visited {
+    color: #333333;
+}
+
+.navbar-toggler {
+    border: 1px solid #333333;
+}
+
+.navbar-toggler-icon {
+    padding-top: 7px;
+}
 /*
 .max-width {
     max-width: 800px;

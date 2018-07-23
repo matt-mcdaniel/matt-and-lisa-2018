@@ -30,11 +30,12 @@
 }
 
 .navbar-toggler {
-    border: 1px solid #333333;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .navbar-toggler-icon {
-    padding-top: 7px;
+    padding-top: 5px;
+    color: black;
 }
 /*
 .max-width {

@@ -110,6 +110,17 @@
 				<label for="name">First and Last Name(s)</label>
 				<input class="form-control" id="name" aria-describedby="emailHelp" placeholder="Mike and Jessica Jones">
 			</div>
+			<div class="form-check" style="margin-bottom:5px">
+				<input type="checkbox" class="form-check-input" id="going">
+				<label class="form-check-label" for="exampleCheck1">Will be attending</label>
+
+			</div>
+			<div class="form-check" style="margin-bottom:30px">
+				<input type="checkbox" class="form-check-input" id="not-going">
+				<label class="form-check-label" for="exampleCheck1">Will
+					<em>not</em> be attending</label>
+
+			</div>
 
 			<div class="btn btn-primary" id="submit">Submit</button>
 		</form>
@@ -157,11 +168,12 @@
 
 		})
 
-		try {
-			// if (!data.name || !data['address-street'] || !data['address-city']) {
-			// 	throw new Error('Please fill out the name and address fields');
-			// }
+		const notGoing = document.getElementById('not-going').checked;
+		const going = document.getElementById('going').checked;
 
+		data.going = !notGoing && going
+
+		try {
 			var newInvitee = invitees.push();
 
 			newInvitee.set(data);

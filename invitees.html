@@ -45,9 +45,18 @@
 			<label for="exampleInputPassword1">Password</label>
 			<input type="password" class="form-control" id="password" placeholder="Password">
 		</div>
-		<div class="btn btn-primary" id="submit">Submit</div>
+		<div class="btn btn-primary" id="submit" style="margin-bottom:30px">Submit</div>
+
+		<h4 style="text-decoration:underline">RSVPs</h4>
+		<div id="rsvps">
+
+
+		</div>
+		<h4 style="text-decoration:underline">Invitees</h4>
 
 	</div>
+
+
 
 
 </body>
@@ -65,6 +74,7 @@
 
 	// Get a reference to the database service
 	var invitees = firebase.database().ref('/invitees');
+	var rsvps = firebase.database().ref('/rsvps');
 
 	var submit = document.getElementById('submit');
 
@@ -103,6 +113,26 @@
 					phone.classList += 'mb-0'
 
 					item.appendChild(phone);
+
+				})
+			})
+
+			rsvps.once('value', function (snapshot) {
+				var val = snapshot.val();
+				Object.keys(val).forEach(function (id) {
+					console.log(val, id);
+					var container = document.getElementById('rsvps');
+
+					var item = document.createElement('div');
+					item.classList += ' item';
+
+					container.appendChild(item);
+
+
+					var name = document.createElement('h4');
+					name.innerHTML = val[id].name;
+					name.classList += 'mb-0'
+					item.appendChild(name);
 
 				})
 			})

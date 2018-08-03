@@ -51,6 +51,14 @@
 		#submit {
 			margin-bottom: 30px;
 		}
+
+		#number {
+			width: 40px;
+		}
+
+		#number-group {
+			display: none;
+		}
 	</style>
 
 
@@ -110,16 +118,22 @@
 				<label for="name">First and Last Name(s)</label>
 				<input class="form-control" id="name" aria-describedby="emailHelp" placeholder="Mike and Jessica Jones">
 			</div>
+
 			<div class="form-check" style="margin-bottom:5px">
 				<input type="checkbox" class="form-check-input" id="going">
 				<label class="form-check-label" for="exampleCheck1">Will be attending</label>
 
 			</div>
-			<div class="form-check" style="margin-bottom:30px">
+			<div class="form-check" style="margin-bottom:30px" id="not-going-group">
 				<input type="checkbox" class="form-check-input" id="not-going">
 				<label class="form-check-label" for="exampleCheck1">Will
 					<em>not</em> be attending</label>
 
+			</div>
+
+			<div class="form-group" id="number-group">
+				<label for="name">Number</label>
+				<input class="form-control" id="number" placeholder="2">
 			</div>
 
 			<div class="btn btn-primary" id="submit">Submit</button>
@@ -156,6 +170,27 @@
 	// Get inputs
 	var submit = document.getElementById('submit');
 
+	const notGoingGroup = document.getElementById('not-going-group');
+	const numberGroup = document.getElementById('number-group');
+
+	// document.body.style.display = "block";
+
+	document.getElementById('going').addEventListener('input', function (e) {
+		console.log(e.target.checked);
+
+
+		if (e.target.checked) {
+			numberGroup.style.display = 'block';
+			notGoingGroup.style.display = 'none';
+		} else {
+			numberGroup.style.display = 'none';
+			notGoingGroup.style.display = 'block';
+		}
+
+
+
+	});
+
 	submit.addEventListener('click', function (e) {
 		e.preventDefault();
 
@@ -172,6 +207,7 @@
 		const going = document.getElementById('going').checked;
 
 		data.going = !notGoing && going
+		data.number = document.getElementById('number').value;
 
 		try {
 			var newInvitee = invitees.push();

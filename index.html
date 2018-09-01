@@ -63,12 +63,12 @@
 			font-size: 40px;
 			background-color: white;
 			width: 40vw;
-			height: 40vw;
 			display: flex;
-			flex-flow: column wrap;
+			flex-flow: column nowrap;
 			justify-content: center;
 			align-items: center;
 			text-align: center;
+			padding: 60px 0;
 		}
 
 		.hr {
@@ -78,6 +78,11 @@
 			border: none;
 			margin: 30px 0 25px;
 			opacity: 0.4;
+		}
+
+		.image {
+			margin-bottom: 30px;
+			max-width: 350px;
 		}
 
 		.date {
@@ -95,6 +100,10 @@
 				border-radius: 0;
 				padding: 100px 10px;
 				font-size: 30px;
+			}
+
+			.image {
+				max-width: 200px;
 			}
 		}
 	</style>
@@ -167,13 +176,18 @@
 		<!-- <h1 class="title">Matt and Lisa 2018</h1> -->
 		<div class="matt-and-lisa">
 			<div class="matt-and-lisa-inner">
-				<span style="font-family:Dancing Script;font-weight:bold">Matt and Lisa</span>
-				<span style="font-family:Dancing Script;font-weight:bold">are getting married!</span>
-				<hr class="hr" />
+				<span style="font-family:Dancing Script;font-weight:bold;">Matt and Lisa</span>
+				<span style="font-family:Dancing Script;font-weight:bold; margin-bottom: 30px;">are getting married!</span>
+				<img alt="" class="image" class="img kerrville" src="IMG_6013.jpg" />
 				<span class="date">October 6, 2018 at 5:30pm</span>
 				<span class="date">Old Arrowhead Ranch</span>
-				<span class="date">200 Old Arrowhead Rd, Hunt, Texas</span>
+				<span class="date">
+					<a style="color: black; border-bottom: 1px solid gray" href="https://www.google.com/maps/place/200+Arrow+Head+Rd,+Hunt,+TX+78024/@30.0380157,-99.3636043,15z/data=!4m5!3m4!1s0x86595ac612c938c9:0xf6957fe96f5013ce!8m2!3d30.0380156!4d-99.3548496">
+						200 Arrow Head Rd, Hunt, Texas
+					</a>
+				</span>
 			</div>
+
 		</div>
 
 
